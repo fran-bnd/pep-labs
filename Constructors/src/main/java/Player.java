@@ -31,7 +31,9 @@ public class Player {
      * @param playerName the name of the player to be created.
      */
     public Player(String playerName){
-
+        // Used for Frodo and Sam, level 1
+        this.playerName = playerName;
+        this.level = 1;
     }
 
     /**
@@ -48,7 +50,9 @@ public class Player {
      * @param level the starting level of the player to be created.
      */
     public Player(String playerName, int level){
-
+        // Used for Gollum, level 5
+        this.playerName = playerName;
+        this.level = level;
     }
 
 }
