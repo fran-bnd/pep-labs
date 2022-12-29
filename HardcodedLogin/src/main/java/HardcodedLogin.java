@@ -16,12 +16,16 @@ public class HardcodedLogin {
      */
     public boolean login(String username, String password){
         if(username.equals("admin")){
-            if (password == "qwerty"){
+            if (password.equals("qwerty")){
                 return true;
+            }else{
+                return false;
             }
-        }else if (username == "user"){
-            if (password == "password"){
+        }else if (username.equals("user")){
+            if (password.equals("password")){
                 return true;
+            }else{
+                return false;
             }
         }else{
             return false;
