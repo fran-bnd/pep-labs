@@ -14,6 +14,8 @@ public class CauseUncheckedException {
      * event happens, like running out of computer memory.
      */
     public void throwUncheckedException(){
-
+        int i = 0;
+        int j = 1 / i;
+        System.out.println(j);
     }
 }
