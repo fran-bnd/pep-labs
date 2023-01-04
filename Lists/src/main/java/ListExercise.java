@@ -31,9 +31,6 @@ public class ListExercise {
      */
     public List<Integer> createList(){
         ArrayList<Integer> cards = new ArrayList<Integer>();
-            cards.add(123);
-            cards.add(543);
-            cards.add(800);
         return cards;
     }
 
@@ -44,8 +41,9 @@ public class ListExercise {
      * @return the size of List (number of items it holds.)
      */
     public int getSize(List<Integer> list){
-        list = new ArrayList<>();
-        return list.size();
+        // list = new ArrayList<>();
+        int sizelist = list.size();
+        return sizelist;
     }
 
     /**
