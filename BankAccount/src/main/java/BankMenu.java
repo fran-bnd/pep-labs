@@ -37,5 +37,6 @@ public class BankMenu {
                 banking = false;
             }
         }
+        userInputScanner.close();
     }
 }
