@@ -16,9 +16,10 @@ public class MaxMinusMin {
      */
     public int difference(List<Integer> nums){
         List<Integer> input = new ArrayList<>();
+        input = nums;
         int resultDifference = 0;
-        int minDifference = 0;
-        int maxDifference = 0;
+        int minDifference = input.get(0);
+        int maxDifference = input.get(0);
 
 
         for (int i=0; i < input.size(); i++){
@@ -33,7 +34,7 @@ public class MaxMinusMin {
 
         } // end for loop
 
-        resultDifference = maxDifference - minDifference;
+        resultDifference = (maxDifference - minDifference);
 
         return resultDifference;
     }
