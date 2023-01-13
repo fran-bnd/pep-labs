@@ -1,2 +1,1 @@
--- TRUNCATE TABLE table_name;
-TRUNCATE TABLE Song;
+TRUNCATE TABLE song;
