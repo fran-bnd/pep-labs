@@ -1,9 +1,10 @@
 package Application.Service;
 
-import Application.Model.Flight;
-import Application.DAO.FlightDAO;
-
+import java.util.ArrayList;
 import java.util.List;
+
+import Application.DAO.FlightDAO;
+import Application.Model.Flight;
 
 /**
  * The purpose of a Service class is to contain "business logic" that sits between the web layer (controller) and
@@ -45,7 +46,7 @@ public class FlightService {
      *         inform our provide the front-end client with information about the added Flight.
      */
     public Flight addFlight(Flight flight){
-        return null;
+        return flightDAO.insertFlight(flight);
     }
 
     /**
@@ -61,7 +62,12 @@ public class FlightService {
      *         user should have some insight if they attempted to edit a nonexistent flight.)
      */
     public Flight updateFlight(int flight_id, Flight flight){
-        return null;
+        Flight flightFromDb = this.flightDAO.getFlightById(flight_id);
+
+        if(flightFromDb == null) return null; 
+
+        flightDAO.updateFlight(flight_id, flight);
+        return this.flightDAO.getFlightById(flight_id);
     }
 
     /**
@@ -71,7 +77,9 @@ public class FlightService {
      * @return all flights in the database.
      */
     public List<Flight> getAllFlights() {
-        return null;
+        List<Flight> listOfAllFlights = new ArrayList<>();
+        listOfAllFlights = flightDAO.getAllFlights();
+        return listOfAllFlights;
     }
 
     /**
@@ -83,6 +91,8 @@ public class FlightService {
      * @return all flights departing from departure_city and arriving at arrival_city.
      */
     public List<Flight> getAllFlightsFromCityToCity(String departure_city, String arrival_city) {
-        return null;
+        List<Flight> allFlightsFromCityToCity = new ArrayList<>();
+        allFlightsFromCityToCity = flightDAO.getAllFlightsFromCityToCity(departure_city, arrival_city);
+        return allFlightsFromCityToCity;
     }
 }
