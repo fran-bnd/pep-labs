@@ -1,11 +1,11 @@
 
 
-import Util.ConnectionUtil;
-import Util.FileUtil;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import Util.ConnectionUtil;
+import Util.FileUtil;
 
 /**
  * SQL sublanguage: DDL (Data Definition Language)
@@ -85,6 +85,8 @@ public class CreateTableWithForeignKey {
          *       where the id is of type SERIAL PRIMARY KEY, post is of type varchar(255), and user_fk is of type
          *       int.
          *
+         * create table post(id SERIAL PRIMARY KEY, post varchar(255), user_fk integer references site_user(id));
+         * 
          * Note: The post column will hold the text content of the post and the user_fk column will be a foreign key to
          * the user table's id.
          */
