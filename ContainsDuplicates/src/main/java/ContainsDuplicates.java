@@ -1,4 +1,5 @@
-import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ContainsDuplicates {
@@ -9,9 +10,14 @@ public class ContainsDuplicates {
      * @return true if nums contains any duplicate values, false if it does not.
      */
     public boolean containsDuplicate(int[] nums){
-        Set<Integer> numeros = new ArrayDeque<Integer>;
-
-
-        return false;
+        boolean duplicates = false;
+        Set<Integer> numeros = new HashSet<Integer>();
+        for (int i=0; i<nums.length; i++){ 
+            if (numeros.contains(nums[i])){
+                duplicates = true; 
+            }
+            numeros.add(nums[i]);
+        }
+        return duplicates;
     }
 }
