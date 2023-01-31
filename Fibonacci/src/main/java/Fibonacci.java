@@ -1,5 +1,9 @@
 
 public class Fibonacci {
+
+    public int fibboAdd(int a, int b){
+        return a+b;
+    }
     /**
      * Return the nth number of fibonacci sequence.
      * The fibonacci sequence is calculated by adding the previous two numbers in the sequence to obtain the next
@@ -15,6 +19,12 @@ public class Fibonacci {
      * @return the nth number of fibonacci sequence.
      */
     public int fib(int n){
-        return 0;
+        int a = 0, b = 1, c = 0;
+        for (int i=0 ; i<n ; i++){
+            c = a+b;
+            a = b;
+            b = c;
+        }
+        return c;
     }
 }
