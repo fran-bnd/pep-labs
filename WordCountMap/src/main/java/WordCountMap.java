@@ -18,7 +18,20 @@ public class WordCountMap {
 
         Map<String, Integer> wordsMap = new HashMap<>();
 
-        
+        String[] inputWordsArr = words.split(" ");
+
+        for (int i=0 ; i < inputWordsArr.length ; i++){
+
+            if (wordsMap.containsKey(inputWordsArr[i])){
+
+                int count = wordsMap.get(inputWordsArr[i]);
+                wordsMap.put(inputWordsArr[i], count+1);
+
+            } else {
+                wordsMap.put(inputWordsArr[i], 1);
+            }    
+        }
+
         return wordsMap;
     }
 }
